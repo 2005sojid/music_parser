@@ -12,6 +12,7 @@ class MyTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: TextField(
+        cursorColor: Colors.white,
         controller: controller,
         style: const TextStyle(color: Colors.white, fontSize: 20),
         textAlignVertical: TextAlignVertical.center,

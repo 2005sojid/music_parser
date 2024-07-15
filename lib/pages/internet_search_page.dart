@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:parsing_url_basic/components/my_future_builder.dart';
 import 'package:parsing_url_basic/components/my_textfield.dart';
+import 'package:parsing_url_basic/fetchAPI/hitmotop_fetch.dart';
 
 class InternetSearchPage extends StatefulWidget {
   InternetSearchPage({super.key});
@@ -14,6 +15,7 @@ class InternetSearchPage extends StatefulWidget {
 class _InternetSearchPageState extends State<InternetSearchPage> {
   var controller = TextEditingController();
 
+  
   var textHint = 'Search on the Internet';
 
   String url = 'https://eu.hitmotop.com/songs/top-rated';
@@ -24,6 +26,7 @@ class _InternetSearchPageState extends State<InternetSearchPage> {
       slivers: [
         SliverAppBar(
           pinned: true,
+          collapsedHeight: 97,
           flexibleSpace: FlexibleSpaceBar(
             title: MyTextField(
               controller: controller,
@@ -51,5 +54,17 @@ class _InternetSearchPageState extends State<InternetSearchPage> {
         url = 'https://eu.hitmotop.com/search?q=$text';
       });
     }
+ 
+     
+
   }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller.clear();
+  }
+
+  
 }
