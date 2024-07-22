@@ -12,28 +12,28 @@ class FetchHitmo {
             .querySelectorAll('a.track__download-btn')
             .map((element) => element.attributes['href'])
             .toList();
-        print('songUrls Length: ${songUrls.length}');
+        // print('songUrls Length: ${songUrls.length}');
         List<String?> songTitles = document
             .querySelectorAll('.track__title')
             .map((element) => element.text.trim())
             .toList();
-        print('songTitles Length: ${songUrls.length}');
+        // print('songTitles Length: ${songUrls.length}');
         List<String?> songSingers = document
             .querySelectorAll('.track__desc')
             .map((element) => element.text)
             .toList();
-        print('songSingers Length: ${songUrls.length}');
+        // print('songSingers Length: ${songUrls.length}');
         List<String?> songFullTime = document
             .querySelectorAll('.track__fulltime')
             .map((element) => element.text)
             .toList();
-        print('songFullTime Length: ${songUrls.length}');
+        // print('songFullTime Length: ${songUrls.length}');
         List<Song?> songs = List.empty(growable: true);
         for (var i = 0; i < songUrls.length; i++) {
           songs.add(Song(
               songTitles[i], songSingers[i], songFullTime[i], songUrls[i]));
         }
-        print("Songs length: ${songs.length}");
+        // print("Songs length: ${songs.length}");
         return songs;
       } catch (e) {
         return [null];
